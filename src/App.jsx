@@ -4,7 +4,7 @@ export class App extends PureComponent {
   render() {
     return (
       <div>
-        <h2>App page<h2/>
+        <h2>App page</h2>
       </div>
   }
 }
