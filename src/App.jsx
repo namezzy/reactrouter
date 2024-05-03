@@ -6,6 +6,7 @@ export class App extends PureComponent {
       <div>
         <h2>App page</h2>
       </div>
+    )
   }
 }
 
