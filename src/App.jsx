@@ -1,8 +1,10 @@
 import React, { PureComponent } from "react";
-import { Link, NavLink, Route, Routes } from "react-router-dom";
+import { Link, Navigate, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import "./style.css";
+import Login from "./pages/Login";
+import NotFoundPage from "./pages/NotFundPage";
 
 export class App extends PureComponent {
   render() {
@@ -41,14 +43,18 @@ export class App extends PureComponent {
 
             <Link to="/home">首页</Link>
             <Link to="/about">关于</Link>
+            <Link to="/login">登录界面</Link>
           </div>
           <hr />
         </div>
         <div className="content">
           {/* 映射关系：path => Component */}
           <Routes>
+            <Route path="/" element={<Navigate to="/home"/>}/>
             <Route path="/home" element={<Home />} />
             <Route path="/about" element={<About />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<NotFoundPage/>}/>
           </Routes>
         </div>
         <div className="footer">
