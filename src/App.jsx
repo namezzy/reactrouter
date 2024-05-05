@@ -1,18 +1,47 @@
 import React, { PureComponent } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { Link, NavLink, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import "./style.css";
 
 export class App extends PureComponent {
   render() {
     return (
       <div className="app">
         <div className="header">
-         <span>Header</span>
-         <div className="nav">
-          <Link to="/home">首页</Link>
-          <Link to="/about">关于</Link>
-         </div>
+          <span>Header</span>
+          <div className="nav">
+            {/* <NavLink
+              to="/home"
+              style={({ isActive }) => ({ color: isActive ? "pink" : "" })}
+            >
+              首页
+            </NavLink>
+            <NavLink
+              to="/about"
+              style={(isActive) => ({ color: isActive ? "gray" : "" })}
+            >
+              关于
+            </NavLink> */}
+            {/* 
+            <NavLink
+              to="/home"
+              className={({ isActive }) => (isActive ? "home-link-active" : "")}
+            >
+              首页
+            </NavLink>
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                isActive ? "about-link-active" : ""
+              }
+            >
+              关于
+            </NavLink> */}
+
+            <Link to="/home">首页</Link>
+            <Link to="/about">关于</Link>
+          </div>
           <hr />
         </div>
         <div className="content">
