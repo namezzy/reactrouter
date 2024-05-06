@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from "react";
 
 export class Order extends PureComponent {
   render() {
@@ -6,8 +6,8 @@ export class Order extends PureComponent {
       <div>
         <h1>Order Page</h1>
       </div>
-    )
+    );
   }
 }
 
-export default Order
+export default Order;

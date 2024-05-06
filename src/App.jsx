@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -11,10 +11,10 @@ import Category from "./pages/Category";
 import Order from "./pages/Order";
 
 export function App(props) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   function navigateTo(path) {
-    navigate(path)
+    navigate(path);
   }
   return (
     <div className="app">
@@ -53,8 +53,8 @@ export function App(props) {
           <Link to="/about">关于</Link>
           <Link to="/login">登录界面</Link>
 
-          <button onClick={e => navigateTo("/category")}>分类</button>
-          <span onClick={e => navigateTo("/order")}>订单</span>
+          <button onClick={(e) => navigateTo("/category")}>分类</button>
+          <span onClick={(e) => navigateTo("/order")}>订单</span>
         </div>
         <hr />
       </div>
