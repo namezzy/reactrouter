@@ -5,6 +5,8 @@ import About from "./pages/About";
 import "./style.css";
 import Login from "./pages/Login";
 import NotFoundPage from "./pages/NotFundPage";
+import HomeRanking from "./pages/HomeRanking";
+import HomeRecommend from "./pages/HomeRecommend";
 
 export class App extends PureComponent {
   render() {
@@ -50,11 +52,15 @@ export class App extends PureComponent {
         <div className="content">
           {/* 映射关系：path => Component */}
           <Routes>
-            <Route path="/" element={<Navigate to="/home"/>}/>
-            <Route path="/home" element={<Home />} />
+            <Route path="/" element={<Navigate to="/home" />} />
+            <Route path="/home" element={<Home />}>
+              <Route path="/home" element={<Navigate to="/home/recommend"/>}/>
+              <Route path="/home/recommend" element={<HomeRecommend />} />
+              <Route path="/home/ranking" element={<HomeRanking />} />
+            </Route>
             <Route path="/about" element={<About />} />
             <Route path="/login" element={<Login />} />
-            <Route path="*" element={<NotFoundPage/>}/>
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
         <div className="footer">
