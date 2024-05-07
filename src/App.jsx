@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -10,6 +10,8 @@ import HomeRecommend from "./pages/HomeRecommend";
 import Category from "./pages/Category";
 import Order from "./pages/Order";
 import HomeSongMenu from "./pages/HomeSongMenu";
+import Detail from "./pages/Detail";
+import User from "./pages/User";
 
 export function App(props) {
   const navigate = useNavigate()
@@ -56,6 +58,9 @@ export function App(props) {
 
           <button onClick={e => navigateTo("/category")}>分类</button>
           <span onClick={e => navigateTo("/order")}>订单</span>
+
+
+          <Link to="/user?name=why&age=20">用户</Link>
         </div>
         <hr />
       </div>
@@ -73,6 +78,8 @@ export function App(props) {
           <Route path="/login" element={<Login />} />
           <Route path="/category" element={<Category />} />
           <Route path="/order" element={<Order />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/user" element={<User />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
