@@ -1,17 +1,18 @@
 import React from "react";
-import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
-import Home from "./pages/Home";
-import About from "./pages/About";
+import { Link, useNavigate, useRoutes } from "react-router-dom";
+// import Home from "./pages/Home";
+// import About from "./pages/About";
+// import Login from "./pages/Login";
+// import NotFoundPage from "./pages/NotFundPage";
+// import HomeRanking from "./pages/HomeRanking";
+// import HomeRecommend from "./pages/HomeRecommend";
+// import Category from "./pages/Category";
+// import Order from "./pages/Order";
+// import HomeSongMenu from "./pages/HomeSongMenu";
+// import Detail from "./pages/Detail";
+// import User from "./pages/User";
+import routes from "./router";
 import "./style.css";
-import Login from "./pages/Login";
-import NotFoundPage from "./pages/NotFundPage";
-import HomeRanking from "./pages/HomeRanking";
-import HomeRecommend from "./pages/HomeRecommend";
-import Category from "./pages/Category";
-import Order from "./pages/Order";
-import HomeSongMenu from "./pages/HomeSongMenu";
-import Detail from "./pages/Detail";
-import User from "./pages/User";
 
 export function App(props) {
   const navigate = useNavigate();
@@ -63,7 +64,7 @@ export function App(props) {
       </div>
       <div className="content">
         {/* 映射关系：path => Component */}
-        <Routes>
+        {/* <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
           <Route path="/home" element={<Home />}>
             <Route path="/home" element={<Navigate to="/home/recommend" />} />
@@ -78,7 +79,8 @@ export function App(props) {
           <Route path="/detail/:id" element={<Detail />} />
           <Route path="/user" element={<User />} />
           <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        </Routes> */}
+        {useRoutes(routes)}
       </div>
       <div className="footer">
         Footer
